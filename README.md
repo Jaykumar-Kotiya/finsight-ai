@@ -54,7 +54,7 @@ finsight-ai/
 ##🧪 Work in Progress (WIP) Modules
 
 ✅ GitHub Repo & Folder Structure
-🔜 Module 1: CNN+LSTM Anomaly Detection
+✅ Module 1: CNN+LSTM Anomaly Detection
 🔜 Module 2: NLP Risk Classifier
 🔜 Module 3: GPT-4 Financial Summary
 🔜 Module 4: FastAPI Model Deployment
