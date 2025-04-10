@@ -1,10 +1,10 @@
-# 🧠 FinSight AI – Real-Time Financial Risk and Anomaly Detection
+# FinSight AI – Real-Time Financial Risk and Anomaly Detection
 
-> 🚀 A full-stack, end-to-end AI project that detects financial fraud and regulatory risks using deep learning, NLP, and MLOps.
+> A full-stack, end-to-end AI project that detects financial fraud and regulatory risks using deep learning, NLP, and MLOps.
 
 ---
 
-## 📌 Project Overview
+##  Project Overview
 
 FinSight AI is a production-grade platform designed to:
 - Detect anomalies in financial transactions using CNN + LSTM
@@ -16,7 +16,7 @@ FinSight AI is a production-grade platform designed to:
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Category         | Tools/Frameworks                             |
 |------------------|-----------------------------------------------|
@@ -30,7 +30,7 @@ FinSight AI is a production-grade platform designed to:
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```bash
 finsight-ai/
@@ -54,12 +54,20 @@ finsight-ai/
 ##🧪 Work in Progress (WIP) Modules
 
 ## ✅ GitHub Repo & Folder Structure
-
 ## ✅ Module 1: CNN+LSTM Anomaly Detection
+## 🔜 Module 2: NLP Risk Classifier
+## 🔜 Module 3: GPT-4 Financial Summary
+## ✅ Module 4: FastAPI Model Deployment
+## 🔜 Module 5: Streamlit / Tableau Dashboard
+## 🔜 Module 6: MLflow Logging & MLOps
+
+--------------------------------------------------------------------------
+
+✅ Module 1: CNN+LSTM Anomaly Detection
 
 This module builds a hybrid **Convolutional Neural Network + LSTM model** for detecting fraudulent transactions in highly imbalanced datasets.
 
-### 📌 Highlights
+###  Highlights
 
 - 📊 Based on the [Kaggle Credit Card Fraud Dataset](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
 - 📉 Balanced the dataset using undersampling to address class imbalance
@@ -85,14 +93,15 @@ Input Shape: (1, 29) → reshaped for (1, 1, 29)
 Output: Binary label (fraud: 1 or not: 0)
 
 Key Metrics
+
 Metric	- Value
 Accuracy - 99.91%
 Loss - ~0.01
 Optimizer - Adam
 Loss Function - Binary Crossentropy
 
-## 🔜 Module 2: NLP Risk Classifier
-## 🔜 Module 3: GPT-4 Financial Summary
+--------------------------------------------------------------------------
+
 ## ✅ Module 4: FastAPI Model Deployment
 
 This module wraps the trained CNN+LSTM anomaly detection model into a RESTful API using FastAPI. It supports fraud predictions via a /predict endpoint and includes:
@@ -128,7 +137,12 @@ uvicorn api.main:app --reload
 3. Visit Swagger UI:
 http://127.0.0.1:8000/docs
 
-Sample Request (POST /predict)
+## API Endpoints
+
+POST /predict
+Make a real-time fraud prediction for a single transaction.
+
+Request Body:
 
 {
   "input": [
@@ -137,14 +151,42 @@ Sample Request (POST /predict)
     -1.4, -0.5, 0.6, 0.0, 0.8, -0.6, 0.7, 0.4, -0.2
   ]
 }
-
-Sample Response
+Response:
 
 {
   "fraud": false,
   "confidence": 0.0421,
   "message": "✅ Prediction successful"
 }
+
+POST /predict_batch
+Send a batch of transactions (from a CSV) and receive fraud predictions.
+
+Request Body:
+{
+  "input": [
+    [0.1, -1.2, ..., -0.2],
+    [0.3, -0.9, ..., 1.2]
+  ]
+}
+Response:
+{
+  "predictions": [0, 1, 0, 0, 1]
+}
+
+## Files Involved
+api/
+├── main.py               ← FastAPI app code
+├── prediction_logs.log   ← Input + prediction log
+models/
+├── cnn_lstm_anomaly_detector.h5
+requirements.txt
+README.md
+
+## Logs
+All predictions are logged in:
+api/prediction_logs.log
+
 
 Dependencies Used
 fastapi
@@ -159,8 +201,11 @@ pydantic
 
 All included in requirements.txt
 
-✅ This module is production-ready, documented, and live-tested.
+## ✅ Status
+FastAPI deployment is complete, live-tested with Postman & Swagger, and ready for production.
 
+## 🔜 Module 2: NLP Risk Classifier
+## 🔜 Module 3: GPT-4 Financial Summary
 ## 🔜 Module 5: Streamlit / Tableau Dashboard
 ## 🔜 Module 6: MLflow Logging & MLOps
 
