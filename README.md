@@ -55,6 +55,8 @@ finsight-ai/
 
 ## ✅ GitHub Repo & Folder Structure
 
+## ✅ Module 1: CNN+LSTM Anomaly Detection
+
 This module builds a hybrid **Convolutional Neural Network + LSTM model** for detecting fraudulent transactions in highly imbalanced datasets.
 
 ### 📌 Highlights
@@ -76,42 +78,38 @@ This module builds a hybrid **Convolutional Neural Network + LSTM model** for de
 
 ### ✅ Model Architecture Overview
 
-```text
 Input → Conv1D → MaxPooling1D → LSTM → Dense → Output (Sigmoid)
 
 Input Shape: (1, 29) → reshaped for (1, 1, 29)
 
 Output: Binary label (fraud: 1 or not: 0)
 
-📊 Key Metrics
-Metric	        Value
-Accuracy	    99.91%
-Loss	        ~0.01
-Optimizer	    Adam
-Loss Function	Binary Crossentropy
+Key Metrics
+Metric	- Value
+Accuracy - 99.91%
+Loss - ~0.01
+Optimizer - Adam
+Loss Function - Binary Crossentropy
 
-------------------------------------------------------------------
-
-## ✅ Module 1: CNN+LSTM Anomaly Detection
+## 🔜 Module 2: NLP Risk Classifier
+## 🔜 Module 3: GPT-4 Financial Summary
+## ✅ Module 4: FastAPI Model Deployment
 
 This module wraps the trained CNN+LSTM anomaly detection model into a RESTful API using FastAPI. It supports fraud predictions via a /predict endpoint and includes:
 
-🔐 Input validation using pydantic
+-> Input validation using pydantic
 
-📏 Input length enforcement (29 features)
+-> Input length enforcement (29 features)
 
-📤 JSON response with fraud flag and confidence score
+-> JSON response with fraud flag and confidence score
 
-🧾 Request/response logging to prediction_logs.log
+-> Request/response logging to prediction_logs.log
 
-🧪 Postman-tested and Swagger-documented
+-> Postman-tested and Swagger-documented
 
-🐍 Runs via uvicorn for dev and production readiness
-
----
+-> Runs via uvicorn for dev and production readiness
 
 Project Structure
-
 api/
 ├── main.py               ← FastAPI app code
 ├── prediction_logs.log   ← Input + prediction log
@@ -120,16 +118,15 @@ models/
 requirements.txt
 README.md
 
----
-
 How to Run the API Locally
-1. Activate your virtual environment: source venv/bin/activate
+1. Activate your virtual environment:
+source venv/bin/activate
 
-2. Run the FastAPI server: uvicorn api.main:app --reload
+2. Run the FastAPI server:
+uvicorn api.main:app --reload
 
-3. Visit Swagger UI: http://127.0.0.1:8000/docs
-
----
+3. Visit Swagger UI:
+http://127.0.0.1:8000/docs
 
 Sample Request (POST /predict)
 
@@ -149,10 +146,7 @@ Sample Response
   "message": "✅ Prediction successful"
 }
 
----
-
 Dependencies Used
-
 fastapi
 
 uvicorn
@@ -165,12 +159,8 @@ pydantic
 
 All included in requirements.txt
 
+✅ This module is production-ready, documented, and live-tested.
 
-
-
-## 🔜 Module 2: NLP Risk Classifier
-## 🔜 Module 3: GPT-4 Financial Summary
-## 🔜 Module 4: FastAPI Model Deployment
 ## 🔜 Module 5: Streamlit / Tableau Dashboard
 ## 🔜 Module 6: MLflow Logging & MLOps
 
