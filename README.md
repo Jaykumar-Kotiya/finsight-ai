@@ -94,11 +94,12 @@ Output: Binary label (fraud: 1 or not: 0)
 
 Key Metrics
 
-Metric	- Value
-Accuracy - 99.91%
-Loss - ~0.01
-Optimizer - Adam
-Loss Function - Binary Crossentropy
+| Metric         | Value               |
+|----------------|---------------------|
+| Accuracy       | 99.91%              |
+| Loss           | ~0.01               |
+| Optimizer      | Adam                |
+| Loss Function  | Binary Crossentropy |
 
 --------------------------------------------------------------------------
 
