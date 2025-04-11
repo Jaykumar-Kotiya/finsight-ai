@@ -205,9 +205,45 @@ All included in requirements.txt
 ## ✅ Status
 FastAPI deployment is complete, live-tested with Postman & Swagger, and ready for production.
 
+## ✅ Module 5: Streamlit / Tableau Dashboard
+
+This module provides an interactive dashboard for real-time and batch fraud detection using the trained CNN+LSTM model.
+
+### 📂 Key Features
+
+- Upload a CSV file with 29 features for batch predictions
+- Visualize fraud vs non-fraud with interactive charts
+- Manually enter 29 features and see live predictions
+- Choose between:
+  - 🚀 FastAPI backend
+  - 🧠 Local TensorFlow model (offline mode)
+- Test API connectivity inside the app
+- Auto-cleans columns like `Time`, `Class`
+
+### 🧪 Try it Yourself
+
+```bash
+streamlit run streamlit_app/app.py
+
+Sample Input File
+You can upload any .csv file with 29 columns
+
+Example available: streamlit_app/sample_transactions.csv
+
+🚀 Prediction Modes
+Mode	Description
+🚀 FastAPI	Uses http://127.0.0.1:8000/predict
+🧠 Local Model	Uses saved .h5 TensorFlow model
+📊 Example Output
+Fraud vs Non-Fraud prediction chart
+
+Confidence bar
+
+Table of results (CSV upload)
+✅ Fully integrated, user-friendly, and production-ready dashboard.
+
 ## 🔜 Module 2: NLP Risk Classifier
 ## 🔜 Module 3: GPT-4 Financial Summary
-## 🔜 Module 5: Streamlit / Tableau Dashboard
 ## 🔜 Module 6: MLflow Logging & MLOps
 
 ---
